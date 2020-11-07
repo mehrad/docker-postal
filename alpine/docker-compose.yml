@@ -6,7 +6,7 @@ services:
     container_name: postal
     command: run
     ports:
-      - 127.0.0.1:25:25
+      - ::::25:25
     depends_on:
       - "mysql"
       - "rabbitmq"
@@ -16,15 +16,15 @@ services:
       - postal_assets:/opt/postal/public/assets
       - ./src/templates/:/templates
     environment:
-      - MYSQL_ROOT_PASSWORD=changeme
+      - MYSQL_ROOT_PASSWORD=pass
       - MYSQL_DATABASE=postal
       - RABBITMQ_DEFAULT_USER=postal
-      - RABBITMQ_DEFAULT_PASS=changeme
+      - RABBITMQ_DEFAULT_PASS=pass
       - RABBITMQ_DEFAULT_VHOST=postal
-      - POSTAL_FNAME=Sia
-      - POSTAL_LNAME=Cat
-      - POSTAL_PASSWORD=SecretCatPassword
-      - POSTAL_EMAIL=myemail@catsworld.com
+      - POSTAL_FNAME=Idea
+      - POSTAL_LNAME=Run
+      - POSTAL_PASSWORD=pass
+      - POSTAL_EMAIL=mail@idearun.com
     healthcheck:
       test: curl -sS http://127.0.0.1:5000 || exit 1
       interval: 5s
@@ -36,14 +36,14 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=changeme
+      - MYSQL_ROOT_PASSWORD=pass
       - MYSQL_DATABASE=postal
   rabbitmq:
     image: rabbitmq:3-alpine
     container_name: postal_rabbitmq
     environment:
       - RABBITMQ_DEFAULT_USER=postal
-      - RABBITMQ_DEFAULT_PASS=changeme
+      - RABBITMQ_DEFAULT_PASS=pass
       - RABBITMQ_DEFAULT_VHOST=/postal
   nginx:
     image: nginx

@@ -46,12 +46,12 @@ dns:
   # https://github.com/atech/postal/wiki/Domains-&-DNS-Configuration for further
   # information about these.
   mx_records:
-    - mx.postal.example.com
-  smtp_server_hostname: postal.example.com
-  spf_include: spf.postal.example.com
-  return_path: rp.postal.example.com
-  route_domain: routes.postal.example.com
-  track_domain: track.postal.example.com
+    - mail.zohaw.com
+  smtp_server_hostname: mail.zohaw.com
+  spf_include: spf.mail.zohaw.com
+  return_path: rp.mail.zohaw.com
+  route_domain: routes.mail.zohaw.com
+  track_domain: track.mail.zohaw.com
 
 smtp:
   # Specify an SMTP server that can be used to send messages from the Postal management
@@ -59,8 +59,7 @@ smtp:
   # your installation has been set up.
   host: 127.0.0.1
   port: 2525
-  username: # Complete when Postal is running and you can
-  password: # generate the credentials within the interface.
+  username: idearun/zohaw-com
+  password: pass
   from_name: Postal
   from_address: postal@yourdomain.com
-

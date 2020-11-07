@@ -7,16 +7,16 @@ RUN wget https://github.com/wrouesnel/p2cli/releases/download/r5/p2 -O /usr/loca
 
 RUN apk --no-cache add nodejs mariadb-client git bash libcap build-base mariadb-dev tzdata mariadb-connector-c openssl expect\
         && git clone https://github.com/atech/postal.git /opt/postal \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& gem install bundler \
-	&& gem install procodile \
-	&& gem install tzinfo-data \
-	&& addgroup -S postal \
-	&& adduser -S -G postal -h /opt/postal -s /bin/bash postal \
-	&& chown -R postal:postal /opt/postal/ \
-	&& /opt/postal/bin/postal bundle /opt/postal/vendor/bundle \
-	&& apk del git mariadb-dev \
-	&& rm -rf /var/cache/apk/*
+        && rm -rf /var/lib/apt/lists/* \
+        && gem install bundler \
+        && gem install procodile \
+        && gem install tzinfo-data \
+        && addgroup -S postal \
+        && adduser -S -G postal -h /opt/postal -s /bin/bash postal \
+        && chown -R postal:postal /opt/postal/ \
+        && /opt/postal/bin/postal bundle /opt/postal/vendor/bundle \
+        && apk del git mariadb-dev \
+        && rm -rf /var/cache/apk/*
 
 ## Install jwilder/dockerize
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \

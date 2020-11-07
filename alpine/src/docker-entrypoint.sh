@@ -5,9 +5,9 @@ rm -rf /opt/postal/tmp/pids/*
 rm -rf /tmp/postal
 
 ## Check if existing config
-if [ -f /storage/postal.yml ]; then
-  cp /storage/postal.yml /opt/postal/config/postal.yml
-fi
+## if [ -f /storage/postal.yml ]; then
+##   cp /storage/postal.yml /opt/postal/config/postal.yml
+## fi
 
 ## Generate config
 if [ ! -f /opt/postal/config/postal.yml ] || [[ $(cat /opt/postal/config/postal.yml | wc -l) < 2 ]]; then
