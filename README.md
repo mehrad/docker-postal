@@ -20,6 +20,7 @@ For this container, use the 'ubuntu' folder.
 3.  Update `MYSQL_ROOT_PASSWORD` and `RABBITMQ_DEFAULT_PASS` everywhere in the file to new secret passwords
 4.  Update `POSTAL_FNAME` (First Name), `POSTAL_LNAME` (Last Name), `POSTAL_PASSWORD`, and `POSTAL_EMAIL` values in the file
 5.  Run `docker-compose up -d`
+6.  Enjoy! ( it will create user and everything should be up and runnign after that)
 
 ### Notes
 *  The `POSTAL_EMAIL` and `POSTAL_PASSWORD` values will be the email and password you use to login
