@@ -24,7 +24,7 @@ services:
       - POSTAL_FNAME=Idea
       - POSTAL_LNAME=Run
       - POSTAL_PASSWORD=pass
-      - POSTAL_EMAIL=mail@idearun.com
+      - POSTAL_EMAIL=mail@some.com
     healthcheck:
       test: curl -sS http://127.0.0.1:5000 || exit 1
       interval: 5s
